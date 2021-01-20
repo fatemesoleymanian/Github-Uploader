@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.6381909547738693" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AppSpace">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="224.0" prefWidth="598.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="108.0" fitWidth="187.0" layoutX="35.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cc.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="108.0" fitWidth="111.0" layoutX="417.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@gitIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="73.0" fitWidth="127.0" layoutX="236.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@copypushAndPull.jpg" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #a9a9a9;">
+         <children>
+            <MenuButton alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="257.0" layoutY="22.0" mnemonicParsing="false" text="Language">
+              <items>
+                <MenuItem fx:id="persianItem" mnemonicParsing="false" onAction="#persianPickesd" text="فارسی" />
+                <MenuItem fx:id="englishItem" mnemonicParsing="false" onAction="#englishPicked" text="English" />
+              </items>
+            </MenuButton>
+            <JFXButton fx:id="enterBtn" layoutX="161.0" layoutY="81.0" onAction="#goToSystemBtn" prefHeight="45.0" prefWidth="276.0" text="Let Me Push And Pull For You !" underline="true">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

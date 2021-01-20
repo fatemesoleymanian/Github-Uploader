@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PersianUploader">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="632.0" prefWidth="371.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label alignment="CENTER" prefHeight="81.0" prefWidth="350.0" style="-fx-background-color: #ffffff;" text="گیت هاب آپلودر" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <font>
+                  <Font name="Arial Narrow Bold" size="25.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf1" alignment="CENTER_RIGHT" layoutX="122.0" layoutY="178.0" prefHeight="38.0" prefWidth="226.0" promptText="E:\Project\myprojectبا فرمت     " style="-fx-background-radius: 90;" />
+            <TextField fx:id="tf2" layoutX="13.0" layoutY="263.0" prefHeight="38.0" prefWidth="346.0" promptText="پیغامی را که دوست دارید در هنگام آپلود ثبت شود بین &quot;&quot; وارد کنید:" style="-fx-background-radius: 90;" />
+            <TextField fx:id="tf3" alignment="CENTER_RIGHT" layoutX="92.0" layoutY="354.0" prefHeight="38.0" prefWidth="256.0" promptText="لینک کامل مخزن گیت هاب خود را وارد کنید :" style="-fx-background-radius: 90;" />
+            <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="140.0" prefHeight="38.0" prefWidth="202.0" text="مسیر پوشه :" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="225.0" prefHeight="38.0" prefWidth="202.0" text="پیغام آپلود :" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT" size="17.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" layoutX="134.0" layoutY="316.0" prefHeight="38.0" prefWidth="202.0" text="آدرس مخزن گیت هاب :" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT" size="17.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn1" alignment="CENTER" layoutX="54.0" layoutY="523.0" mnemonicParsing="false" onAction="#submitBtn1" prefHeight="68.0" prefWidth="281.0" style="-fx-background-color: #FFffff; -fx-background-radius: 90;" text="ثبت و آپلود برای اولین بار در این مخرن داخلی">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btn2" alignment="CENTER" layoutX="100.0" layoutY="449.0" mnemonicParsing="false" onAction="#submitBtn2" prefHeight="59.0" prefWidth="190.0" style="-fx-background-color: #FFffff; -fx-background-radius: 90;" text="ثبت و آپلود">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="9.0" layoutY="188.0" onMouseClicked="#directoryMoreInfoLbl" text="اطلاعات بیشتر" textFill="#0b8abc" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Label>
+            <Label layoutX="9.0" layoutY="364.0" onMouseClicked="#linkMoreInfoLbl" text="اطلاعات بیشتر" textFill="#0b8abc" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Label>
+            <Label layoutX="164.0" layoutY="601.0" onMouseClicked="#btnsMoreInfoLbl" text="اطلاعات بیشتر" textFill="#0b8abc" underline="true">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
