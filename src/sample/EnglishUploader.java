@@ -59,7 +59,7 @@ public class EnglishUploader {
     void btnsMoreInfoLbl(MouseEvent event) {
         Alert alert3=new Alert(Alert.AlertType.INFORMATION);
         alert3.setHeaderText("If there's a hidden .git file in your file/project directory \n" +
-                             "click 'Submit If Git folder Exists' Button But if there's no \nclick 'Submit For The First Time' .");
+                             "click 'Submit If Git folder Exists' Button But if there's no \nclick 'Submit For The First Time' ");
         alert3.showAndWait();
 
     }
@@ -67,7 +67,7 @@ public class EnglishUploader {
     @FXML
     void directoryMoreInfoLbl(MouseEvent event) {
         Alert alert4=new Alert(Alert.AlertType.INFORMATION);
-        alert4.setHeaderText("Go to where project file is located and copy then paste it here .");
+        alert4.setHeaderText("Go to where project file is located and copy the directory then paste it here.");
         alert4.showAndWait();
 
     }
@@ -76,7 +76,7 @@ public class EnglishUploader {
     void linkMoreInfoLbl(MouseEvent event) {
         Alert alert5=new Alert(Alert.AlertType.INFORMATION);
         alert5.setHeaderText("Go to your github repository which you want it to be updated \n" +
-                             "by your upload ,copy your  repository HTTPS and paste it here .");
+                             "by your upload ,copy your  repository HTTPS or SSH and paste it here.");
         alert5.showAndWait();
 
 
