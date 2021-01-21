@@ -5,15 +5,18 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class PersianUploader {
+import java.io.IOException;
+
+public class PersianPusher extends AlertcreatorAndBack {
 
     @FXML
     private TextField tf1;
 
     @FXML
-    private TextField tf2;
+    private TextField tf4;
 
     @FXML
     private TextField tf3;
@@ -24,32 +27,36 @@ public class PersianUploader {
     @FXML
     private Button btn2;
 
-    Entity entity=new Entity();
+    @FXML
+    private TextField tf2;
 
     @FXML
+    private ImageView backImg;
+
+    Entity entity=new Entity();
+
+
+                                //****** MORE INFO LABELS *****
+    @FXML
     void btnsMoreInfoLbl(MouseEvent event) {
-        Alert alert3=new Alert(Alert.AlertType.INFORMATION);
-        alert3.setHeaderText("در صورت وجود داشتن پوشه پنهانی git. در فایل آپلودی مورد نظر \nدکمه ثبت و آپلود و در غیر اینصورت دکمه ثبت و آپلود برای اولین بار در این مخرن داخلی را بفشارید .");
-        alert3.showAndWait();
+        super.btnsMoreInfoLbl();
     }
 
     @FXML
     void directoryMoreInfoLbl(MouseEvent event) {
-        Alert alert3=new Alert(Alert.AlertType.INFORMATION);
-        alert3.setHeaderText("به پوشه ای که میخواهید محتویات آن را آپلود کنید بروید\nو سپس از نوار بالا مسیر را کپی کنید و دراینجا پیست کنید .");
-        alert3.showAndWait();
-
+        super.directoryMoreInfoLbl();
     }
 
     @FXML
     void linkMoreInfoLbl(MouseEvent event) {
-        Alert alert3=new Alert(Alert.AlertType.INFORMATION);
-        alert3.setHeaderText("به مخزنی که میخواهید در آن آپلود را انجام دهید در گیت هاب بروید\nو لینک HTTPS مخزن را کپی و دراینجا پیست کنید .");
-        alert3.showAndWait();
-
+        super.linkMoreInfoLbl();
 
     }
+    @FXML
+    void branchNameMoreInfoLbl(MouseEvent event) {super.branchNameMoreInfoLbl(); }
 
+
+                                        //***** PUSH BUTTONS ******
     @FXML
     void submitBtn1(ActionEvent event) throws Exception {
         Alert alert1=new Alert(Alert.AlertType.INFORMATION,"لطفا صبر کنید ...");
@@ -58,7 +65,8 @@ public class PersianUploader {
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m "+entity.getComment()+" && git remote add origin "+entity.getLink()+" && git push -u origin master\"");
+        entity.setBranch(tf4.getText());
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+ entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+"\"");
         alert1.close();
         Alert alert2=new Alert(Alert.AlertType.INFORMATION,"فایل با موفقیت آپلود شد !");
         alert2.setAlertType(Alert.AlertType.INFORMATION);
@@ -74,11 +82,18 @@ public class PersianUploader {
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+entity.getComment()+ " && git push -u origin master\"");
+        entity.setBranch(tf4.getText());
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+entity.getComment()+ " && git push -u origin "+entity.getBranch()+"\"");
         Alert alert2=new Alert(Alert.AlertType.INFORMATION,"فایل با موفقیت آپلود شد !");
         alert2.setAlertType(Alert.AlertType.INFORMATION);
         alert2.close();
         alert2.show();
+
+    }
+
+                                        //****** BACK TO MENU ********
+    @FXML
+    void backBtn(MouseEvent event) throws IOException {backToMenu(backImg);
 
     }
 

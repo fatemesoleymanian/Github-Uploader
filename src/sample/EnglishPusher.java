@@ -5,10 +5,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
+import java.io.IOException;
 
-public class EnglishUploader {
+public class EnglishPusher extends AlertcreatorAndBack {
 
     Entity entity=new Entity();
 
@@ -22,11 +23,19 @@ public class EnglishUploader {
     private TextField tf3;
 
     @FXML
+    private TextField tf4;
+
+    @FXML
     private Button btn1;
 
     @FXML
     private Button btn2;
 
+    @FXML
+    private ImageView backImg;
+
+
+                                 //******** PUSH BUTTONS ******
     public void submitBtn1(ActionEvent actionEvent)throws Exception {
         Alert alert1=new Alert(Alert.AlertType.INFORMATION,"Please Wait...");
         alert1.setAlertType(Alert.AlertType.INFORMATION);
@@ -34,7 +43,8 @@ public class EnglishUploader {
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m "+entity.getComment()+" && git remote add origin "+entity.getLink()+" && git push -u origin master\"");
+        entity.setBranch(tf4.getText());
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+"\"");
         alert1.close();
         Alert alert2=new Alert(Alert.AlertType.INFORMATION,"File Pushed Successfully!");
         alert2.setAlertType(Alert.AlertType.INFORMATION);
@@ -48,39 +58,33 @@ public class EnglishUploader {
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+entity.getComment()+ " && git push -u origin master\"");
+        entity.setBranch(tf4.getText());
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+"  && git init && git add -A && git commit -m  "+entity.getComment()+ " && git push -u origin  "+entity.getBranch()+"\"");
         Alert alert2=new Alert(Alert.AlertType.INFORMATION,"File Pushed Successfully!");
         alert2.setAlertType(Alert.AlertType.INFORMATION);
         alert1.close();
         alert2.show();
     }
 
+                                //***** MORE INFO LABELS *******
     @FXML
-    void btnsMoreInfoLbl(MouseEvent event) {
-        Alert alert3=new Alert(Alert.AlertType.INFORMATION);
-        alert3.setHeaderText("If there's a hidden .git file in your file/project directory \n" +
-                             "click 'Submit If Git folder Exists' Button But if there's no \nclick 'Submit For The First Time' .");
-        alert3.showAndWait();
-
-    }
+    void btnsMoreInfoLbl(MouseEvent event) { pushAlerts(); }
 
     @FXML
-    void directoryMoreInfoLbl(MouseEvent event) {
-        Alert alert4=new Alert(Alert.AlertType.INFORMATION);
-        alert4.setHeaderText("Go to where project file is located and copy then paste it here .");
-        alert4.showAndWait();
-
-    }
+    void directoryMoreInfoLbl(MouseEvent event) { directoryAlert(); }
 
     @FXML
-    void linkMoreInfoLbl(MouseEvent event) {
-        Alert alert5=new Alert(Alert.AlertType.INFORMATION);
-        alert5.setHeaderText("Go to your github repository which you want it to be updated \n" +
-                             "by your upload ,copy your  repository HTTPS and paste it here .");
-        alert5.showAndWait();
+    void linkMoreInfoLbl(MouseEvent event) { linkAlert(); }
 
 
-    }
+    @FXML
+    void branchNameMoreInfoLbl(MouseEvent event) { branchNameAlert(); }
+
+
+                                //****** BACK TO MENU ********
+    @FXML
+    void backBtn(MouseEvent event) throws IOException {backToMenu(backImg); }
+
 
 
 }
