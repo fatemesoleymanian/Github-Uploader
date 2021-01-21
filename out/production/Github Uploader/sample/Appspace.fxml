@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
@@ -14,21 +15,26 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="224.0" prefWidth="598.0" style="-fx-background-color: #ffffff;">
          <children>
-            <ImageView fitHeight="108.0" fitWidth="187.0" layoutX="35.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="108.0" fitWidth="187.0" layoutX="42.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@cc.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="108.0" fitWidth="111.0" layoutX="417.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="108.0" fitWidth="111.0" layoutX="431.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@gitIcon.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="73.0" fitWidth="127.0" layoutX="236.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="73.0" fitWidth="127.0" layoutX="245.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@copypushAndPull.jpg" />
                </image>
             </ImageView>
+            <Label layoutX="104.0" layoutY="14.0" text="I'm Ready To Push Or Pull For You !">
+               <font>
+                  <Font name="Cambria Bold" size="24.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #a9a9a9;">
          <children>
@@ -38,7 +44,15 @@
                 <MenuItem fx:id="englishItem" mnemonicParsing="false" onAction="#englishPicked" text="English" />
               </items>
             </MenuButton>
-            <JFXButton fx:id="enterBtn" layoutX="161.0" layoutY="81.0" onAction="#goToSystemBtn" prefHeight="45.0" prefWidth="276.0" text="Let Me Push And Pull For You !" underline="true">
+            <JFXButton fx:id="pushBtn" layoutX="23.0" layoutY="82.0" onAction="#goToPushBtn" prefHeight="45.0" prefWidth="276.0" text="PUSH !" underline="true">
+               <font>
+                  <Font name="Cambria Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="pullBtn" layoutX="308.0" layoutY="82.0" onAction="#goToPullBtn" prefHeight="45.0" prefWidth="276.0" text="PULL !" underline="true">
                <font>
                   <Font name="Cambria Bold" size="18.0" />
                </font>
