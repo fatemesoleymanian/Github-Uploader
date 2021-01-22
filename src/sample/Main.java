@@ -32,3 +32,5 @@ public class Main extends Application {
     //  Just please make a menu for user for choosing between Pull/Push in the Appspace.fxml! Make it like the persian/English options menu.
     // TODO: 1/20/2021 3.how to solve username password problem -----> It will be done, I'll show you how!
 }
+//TODO: Can it be any BETTER?? :)))))))))))))))))
+//todo  always think about a better one !

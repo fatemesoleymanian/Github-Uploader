@@ -59,35 +59,30 @@ public class PersianPusher extends AlertcreatorAndBack {
                                         //***** PUSH BUTTONS ******
     @FXML
     void submitBtn1(ActionEvent event) throws Exception {
-        Alert alert1=new Alert(Alert.AlertType.INFORMATION,"لطفا صبر کنید ...");
-        alert1.setAlertType(Alert.AlertType.INFORMATION);
-        alert1.show();
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+ entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+"\"");
-        alert1.close();
-        Alert alert2=new Alert(Alert.AlertType.INFORMATION,"فایل با موفقیت آپلود شد !");
-        alert2.setAlertType(Alert.AlertType.INFORMATION);
-        alert2.show();
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+ entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+" && exit\"");
+        Alert alert=new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("فایل ها با موفقیت آپلود شدند");
+        alert.setContentText("به ریپازیتوری خود سر بزنید!");
+        alert.show();
 
     }
 
     @FXML
     void submitBtn2(ActionEvent event) throws Exception {
-        Alert alert=new Alert(Alert.AlertType.INFORMATION,"لطفا صبر کنید ...");
-        alert.setAlertType(Alert.AlertType.INFORMATION);
-        alert.show();
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+entity.getComment()+ " && git push -u origin "+entity.getBranch()+"\"");
-        Alert alert2=new Alert(Alert.AlertType.INFORMATION,"فایل با موفقیت آپلود شد !");
-        alert2.setAlertType(Alert.AlertType.INFORMATION);
-        alert2.close();
-        alert2.show();
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+entity.getComment()+ " && git push -u origin "+entity.getBranch()+" && exit\"");
+        Alert alert=new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("اخطار گیت هاب");
+        alert.setContentText("به ریپازیتوری خود سر بزنید!");
+        alert.setHeaderText("فایل ها با موفقیت آپلود شدند");
+        alert.show();
 
     }
 
