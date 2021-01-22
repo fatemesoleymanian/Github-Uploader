@@ -37,33 +37,29 @@ public class EnglishPusher extends AlertcreatorAndBack {
 
                                  //******** PUSH BUTTONS ******
     public void submitBtn1(ActionEvent actionEvent)throws Exception {
-        Alert alert1=new Alert(Alert.AlertType.INFORMATION,"Please Wait...");
-        alert1.setAlertType(Alert.AlertType.INFORMATION);
-        alert1.show();
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+"\"");
-        alert1.close();
-        Alert alert2=new Alert(Alert.AlertType.INFORMATION,"File Pushed Successfully!");
-        alert2.setAlertType(Alert.AlertType.INFORMATION);
-        alert2.show();
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+" && exit\"");
+        Alert alert=new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Github Warning");
+        alert.setContentText("Check your Repository!");
+        alert.setHeaderText("Pushed Successfully");
+        alert.show();
     }
 
     public void submitBtn2(ActionEvent actionEvent)throws Exception {
-        Alert alert1=new Alert(Alert.AlertType.INFORMATION,"Please Wait...");
-        alert1.setAlertType(Alert.AlertType.INFORMATION);
-        alert1.show();
         entity.setDirectory(tf1.getText());
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+"  && git init && git add -A && git commit -m  "+entity.getComment()+ " && git push -u origin  "+entity.getBranch()+"\"");
-        Alert alert2=new Alert(Alert.AlertType.INFORMATION,"File Pushed Successfully!");
-        alert2.setAlertType(Alert.AlertType.INFORMATION);
-        alert1.close();
-        alert2.show();
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+"  && git init && git add -A && git commit -m  "+entity.getComment()+ " && git push -u origin  "+entity.getBranch()+" && exit\"");
+        Alert alert=new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Github Warning");
+        alert.setContentText("Check your Repository!");
+        alert.setHeaderText("Pushed Successfully");
+        alert.show();
     }
 
                                 //***** MORE INFO LABELS *******

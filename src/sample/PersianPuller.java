@@ -2,6 +2,7 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -55,7 +56,13 @@ public class PersianPuller extends AlertcreatorAndBack{
         entity.setDirectory(tf1.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf2.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git remote add origin "+entity.getLink()+" && git pull origin "+entity.getBranch()+ "\"");
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git remote add origin "+entity.getLink()+" && git pull origin "+entity.getBranch()+ " && exit\"");
+        Alert alert=new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("اخطار گیت هاب");
+        alert.setContentText("فولدر خود را چک کنید!");
+        alert.setHeaderText("با موفقیت دانلود شد");
+        alert.show();
+
 
     }
 
