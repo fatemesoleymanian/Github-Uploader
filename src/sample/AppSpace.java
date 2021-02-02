@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
@@ -20,6 +21,10 @@ public class AppSpace extends AlertcreatorAndBack{
     private MenuItem persianItem;
 
     @FXML
+    private MenuButton pickedButton;
+
+
+    @FXML
     private MenuItem englishItem;
 
     @FXML
@@ -31,10 +36,15 @@ public class AppSpace extends AlertcreatorAndBack{
     public String picked="none";
 
     @FXML
-    void englishPicked(ActionEvent event) { picked=englishItem.getText(); }
+    void englishPicked(ActionEvent event) {
+        picked=englishItem.getText();
+        pickedButton.setText(picked);
+    }
 
     @FXML
-    void persianPickesd(ActionEvent event) { picked=persianItem.getText(); }
+    void persianPickesd(ActionEvent event) {
+        picked=persianItem.getText();
+    pickedButton.setText(picked);}
 
 
      public void leader(JFXButton button,String fxmAddress,double width,double height) throws IOException {

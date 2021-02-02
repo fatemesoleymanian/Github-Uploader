@@ -41,7 +41,7 @@ public class EnglishPusher extends AlertcreatorAndBack {
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+" && exit\"");
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+"\""+entity.getComment()+" \" "+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+" && exit\"");
         Alert alert=new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Github Warning");
         alert.setContentText("Check your Repository!");
@@ -54,7 +54,7 @@ public class EnglishPusher extends AlertcreatorAndBack {
         entity.setComment(tf2.getText());
         entity.setLink(tf3.getText());
         entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+"  && git init && git add -A && git commit -m  "+entity.getComment()+ " && git push -u origin  "+entity.getBranch()+" && exit\"");
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+"  && git init && git add -A && git commit -m  "+"\""+entity.getComment()+" \" "+ " && git push -u origin  "+entity.getBranch()+" && exit\"");
         Alert alert=new Alert(Alert.AlertType.WARNING);
         alert.setTitle("Github Warning");
         alert.setContentText("Check your Repository!");

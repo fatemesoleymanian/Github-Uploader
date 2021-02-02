@@ -36,15 +36,15 @@
                </font>
             </Label>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #a9a9a9;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="153.0" prefWidth="598.0" style="-fx-background-color: #a9a9a9;">
          <children>
-            <MenuButton alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="257.0" layoutY="22.0" mnemonicParsing="false" text="Language">
+            <MenuButton fx:id="pickedButton" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="244.0" layoutY="14.0" prefHeight="38.0" prefWidth="92.0" text="Language">
               <items>
                 <MenuItem fx:id="persianItem" mnemonicParsing="false" onAction="#persianPickesd" text="فارسی" />
                 <MenuItem fx:id="englishItem" mnemonicParsing="false" onAction="#englishPicked" text="English" />
               </items>
             </MenuButton>
-            <JFXButton fx:id="pushBtn" layoutX="23.0" layoutY="82.0" onAction="#goToPushBtn" prefHeight="45.0" prefWidth="276.0" text="PUSH !" underline="true">
+            <JFXButton fx:id="pushBtn" layoutX="83.0" layoutY="71.0" onAction="#goToPushBtn" prefHeight="45.0" prefWidth="152.0" text="UPLOAD !" underline="true">
                <font>
                   <Font name="Cambria Bold" size="18.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="pullBtn" layoutX="308.0" layoutY="82.0" onAction="#goToPullBtn" prefHeight="45.0" prefWidth="276.0" text="PULL !" underline="true">
+            <JFXButton fx:id="pullBtn" layoutX="382.0" layoutY="71.0" onAction="#goToPullBtn" prefHeight="45.0" prefWidth="145.0" text="DOWNLOAD !" underline="true">
                <font>
                   <Font name="Cambria Bold" size="18.0" />
                </font>

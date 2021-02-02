@@ -44,6 +44,8 @@ public class PersianPusher extends AlertcreatorAndBack {
 
     @FXML
     void directoryMoreInfoLbl(MouseEvent event) {
+
+        // TODO: 2/1/2021 browse
         super.directoryMoreInfoLbl();
     }
 
@@ -60,10 +62,10 @@ public class PersianPusher extends AlertcreatorAndBack {
     @FXML
     void submitBtn1(ActionEvent event) throws Exception {
         entity.setDirectory(tf1.getText());
-        entity.setComment(tf2.getText());
+        entity.setComment(tf4.getText());
         entity.setLink(tf3.getText());
-        entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+ entity.getComment()+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+" && exit\"");
+        entity.setBranch(tf2.getText());
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add . && git commit -m  "+ "\""+entity.getComment()+" \" "+"  && git remote add origin "+entity.getLink()+" && git push -u origin "+entity.getBranch()+" && exit\"");
         Alert alert=new Alert(Alert.AlertType.WARNING);
         alert.setTitle("فایل ها با موفقیت آپلود شدند");
         alert.setContentText("به ریپازیتوری خود سر بزنید!");
@@ -74,10 +76,10 @@ public class PersianPusher extends AlertcreatorAndBack {
     @FXML
     void submitBtn2(ActionEvent event) throws Exception {
         entity.setDirectory(tf1.getText());
-        entity.setComment(tf2.getText());
+        entity.setComment(tf4.getText());
         entity.setLink(tf3.getText());
-        entity.setBranch(tf4.getText());
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+entity.getComment()+ " && git push -u origin "+entity.getBranch()+" && exit\"");
+        entity.setBranch(tf2.getText());
+        Runtime.getRuntime().exec("cmd /c start cmd.exe /K \"cd "+entity.getDirectory()+" && git init && git add -A && git commit -m "+"\""+entity.getComment()+" \" "+ " && git push -u origin "+entity.getBranch()+" && exit\"");
         Alert alert=new Alert(Alert.AlertType.WARNING);
         alert.setTitle("اخطار گیت هاب");
         alert.setContentText("به ریپازیتوری خود سر بزنید!");

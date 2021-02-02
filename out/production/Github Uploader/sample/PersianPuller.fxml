@@ -16,7 +16,7 @@
             <Font name="Arial Narrow Bold" size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="tf1" layoutX="71.0" layoutY="160.0" prefHeight="38.0" prefWidth="226.0" promptText="E:\Project\myprojectبا فرمت برای نمونه " style="-fx-background-radius: 90;" />
+      <TextField fx:id="tf1" layoutX="71.0" layoutY="160.0" prefHeight="38.0" prefWidth="226.0" style="-fx-background-radius: 90;" />
       <TextField fx:id="tf3" alignment="CENTER_RIGHT" layoutX="71.0" layoutY="269.0" prefHeight="38.0" prefWidth="226.0" promptText="لینک کامل مخزن گیت هاب خود را وارد کنید :" style="-fx-background-radius: 90;" />
       <Label alignment="CENTER_RIGHT" layoutX="85.0" layoutY="122.0" prefHeight="38.0" prefWidth="200.0" text="مسیر پوشه :" textFill="WHITE">
          <font>
@@ -39,24 +39,33 @@
             <Font name="Bell MT" size="17.0" />
          </font>
       </Label>
-      <Label layoutX="10.0" layoutY="198.0" onMouseClicked="#directoryMoreInfoLbl" text="اطلاعات بیشتر" textFill="#0b8abc" underline="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Label>
-      <Label layoutX="10.0" layoutY="307.0" onMouseClicked="#linkMoreInfoLbl" text="اطلاعات بیشتر" textFill="#0b8abc" underline="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Label>
-      <Label layoutX="10.0" layoutY="405.0" onMouseClicked="#branchNameMoreInfoLbl" text="اطلاعات بیشتر" textFill="#0b8abc" underline="true">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Label>
       <ImageView fx:id="backImg" fitHeight="53.0" fitWidth="61.0" layoutX="14.0" layoutY="486.0" onMouseClicked="#backBtn" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@backIcon.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="24.0" layoutX="35.0" layoutY="168.0" onMouseClicked="#directoryMoreInfoLbl" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@500_F_143659246_Q4kTQ14FoMf8ZD2x2rWVao9BV9fHGDM.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="38.0" layoutY="280.0" onMouseClicked="#linkMoreInfoLbl" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@questionMark.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="38.0" layoutY="378.0" onMouseClicked="#branchNameMoreInfoLbl" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@questionMark.jpg" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
