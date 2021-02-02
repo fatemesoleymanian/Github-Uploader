@@ -7,7 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.DirectoryChooser;
 
+import java.io.File;
 import java.io.IOException;
 
 public class PersianPuller extends AlertcreatorAndBack{
@@ -41,7 +43,17 @@ public class PersianPuller extends AlertcreatorAndBack{
 
     @FXML
     void directoryMoreInfoLbl(MouseEvent event) {
-        super.directoryMoreInfoLbl();
+        DirectoryChooser directoryChooser=new DirectoryChooser();
+        File selectedFiles=directoryChooser.showDialog(null);
+
+        if (selectedFiles != null){
+
+            tf1.setText(selectedFiles.getAbsolutePath());
+
+        }else {
+            super.directoryMoreInfoLbl();
+
+        }
 
     }
 

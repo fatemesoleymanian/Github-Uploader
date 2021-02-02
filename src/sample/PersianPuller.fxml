@@ -47,7 +47,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="24.0" layoutX="35.0" layoutY="168.0" onMouseClicked="#directoryMoreInfoLbl" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="38.0" fitWidth="24.0" layoutX="34.0" layoutY="160.0" onMouseClicked="#directoryMoreInfoLbl" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@500_F_143659246_Q4kTQ14FoMf8ZD2x2rWVao9BV9fHGDM.jpg" />
          </image>

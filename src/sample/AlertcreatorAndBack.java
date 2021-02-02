@@ -11,9 +11,10 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class AlertcreatorAndBack {
+
     public void directoryAlert(){
         Alert alert4=new Alert(Alert.AlertType.INFORMATION);
-        alert4.setHeaderText("Go to where project file is located and copy the directory then paste it here.");
+        alert4.setHeaderText("Chosen file is invalid !");
         alert4.showAndWait();
 
 
@@ -64,7 +65,7 @@ public class AlertcreatorAndBack {
     }
     public void directoryMoreInfoLbl(){
         Alert alert3=new Alert(Alert.AlertType.INFORMATION);
-        alert3.setHeaderText("به پوشه ای که میخواهید محتویات آن را آپلود کنید بروید\nو سپس از نوار بالا مسیر را کپی کنید و دراینجا پیست کنید .");
+        alert3.setHeaderText("فولدر انتخاب شده نامعتبر است !");
         alert3.showAndWait();
 
     }

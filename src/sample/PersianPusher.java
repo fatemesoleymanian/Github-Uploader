@@ -1,5 +1,6 @@
 package sample;
 
+import com.sun.glass.ui.CommonDialogs;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -7,8 +8,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 
+import javax.swing.plaf.metal.MetalIconFactory;
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class PersianPusher extends AlertcreatorAndBack {
 
@@ -43,10 +49,19 @@ public class PersianPusher extends AlertcreatorAndBack {
     }
 
     @FXML
-    void directoryMoreInfoLbl(MouseEvent event) {
+    void directoryMoreInfoLbl(MouseEvent event)  {
 
-        // TODO: 2/1/2021 browse
-        super.directoryMoreInfoLbl();
+        DirectoryChooser directoryChooser=new DirectoryChooser();
+        File selectedFiles=directoryChooser.showDialog(null);
+
+        if (selectedFiles != null){
+
+            tf1.setText(selectedFiles.getAbsolutePath());
+
+        }else {
+            super.directoryMoreInfoLbl();
+
+        }
     }
 
     @FXML

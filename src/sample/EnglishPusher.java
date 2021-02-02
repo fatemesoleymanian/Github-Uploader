@@ -7,6 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.DirectoryChooser;
+
+import java.io.File;
 import java.io.IOException;
 
 public class EnglishPusher extends AlertcreatorAndBack {
@@ -67,7 +70,18 @@ public class EnglishPusher extends AlertcreatorAndBack {
     void btnsMoreInfoLbl(MouseEvent event) { pushAlerts(); }
 
     @FXML
-    void directoryMoreInfoLbl(MouseEvent event) { directoryAlert(); }
+    void directoryMoreInfoLbl(MouseEvent event) {
+        DirectoryChooser directoryChooser=new DirectoryChooser();
+        File selectedFiles=directoryChooser.showDialog(null);
+
+        if (selectedFiles != null){
+
+            tf1.setText(selectedFiles.getAbsolutePath());
+
+        }else {
+            super.directoryAlert();
+
+        } }
 
     @FXML
     void linkMoreInfoLbl(MouseEvent event) { linkAlert(); }
